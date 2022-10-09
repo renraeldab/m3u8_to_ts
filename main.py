@@ -9,4 +9,4 @@ if __name__ == '__main__':
     m3u8.print()     # it contains urls of .m3u8, not encrypted
     m3u8 = m3u8.get_m3u8(2)
     m3u8.print()     # it contains urls of .ts, not encrypted
-    m3u8.get_ts('/Users/jtian/Desktop/test.ts')
+    m3u8.get_ts('/Users/test.ts')
