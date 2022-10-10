@@ -2,6 +2,8 @@ import requests
 from types import FunctionType
 from tqdm import tqdm
 from multiprocessing.pool import Pool
+from time import sleep
+from random import uniform
 
 
 class Client:
@@ -90,6 +92,7 @@ class M3U8:
         update = lambda *args: bar.update()
         # multiprocessing
         for cu in self.child_urls:
+            sleep(round(uniform(0, 0.2), 3))    # prevent too frequent requests
             results.append(pool.apply_async(download_ts, (self.client, cu, decrypt), kwargs, callback=update))
         pool.close()
         pool.join()
